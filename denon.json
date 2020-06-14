@@ -1,0 +1,16 @@
+{
+  "env": {
+    "MYSQL_HOST": "localhost",
+    "MYSQL_USERNAME": "root",
+    "MYSQL_PASSWORD": "",
+    "MYSQL_DATABASE": ""
+  },
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "allow": ["net", "env"],
+  "scripts": {
+    "start": {
+      "cmd": "deno run server.ts",
+      "desc": "run my app.ts file"
+    }
+  }
+}

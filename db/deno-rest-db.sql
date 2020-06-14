@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2020 at 05:48 PM
+-- Generation Time: Jun 14, 2020 at 07:03 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -34,16 +34,6 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `description`, `price`) VALUES
-(1, 'phone', 20.9),
-(3, 'phone', 20.9),
-(4, 'phone', 20.9),
-(5, 'phone', 20.9);
-
---
 -- Indexes for dumped tables
 --
 
@@ -61,7 +51,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

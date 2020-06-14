@@ -11,14 +11,39 @@ const getProducts = async (ctx: RouterContext) => {
       count: products.length,
       data: products,
     };
+  } else {
+    ctx.response.status = 200;
+    ctx.response.body = {
+      message: 'Available products',
+      code: '200',
+      count: products.length,
+      data: products,
+    };
   }
-  ctx.response.status = 200;
-  ctx.response.body = {
-    message: 'Available products',
-    code: '200',
-    count: products.length,
-    data: products,
-  };
 };
 
-export { getProducts };
+const createProduct = async (ctx: RouterContext) => {
+  const {
+    value: { description, price },
+  } = await ctx.request.body();
+
+  if (description == undefined || price == undefined) {
+    ctx.response.status = 422;
+    ctx.response.body = {
+      message: 'Invalid or incorrect parameter(s)',
+      code: '422',
+      count: 0,
+      data: null,
+    };
+    ctx;
+  } else {
+    let result = await db.execute(
+      `INSERT INTO products (description, price) values(?, ?)`,
+      [description, Number(price)]
+      // ['phone', 20.9]
+    );
+    console.log(result.lastInsertId);
+  }
+};
+
+export { getProducts, createProduct };

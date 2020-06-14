@@ -4,6 +4,7 @@ import {
   createProduct,
   getSingleProduct,
   deleteSingleProduct,
+  updateSingleProduct,
 } from './controllers/product.ts';
 
 const app = new Application();
@@ -42,7 +43,7 @@ router
   .get('/products', getProducts)
   .get('/products/:id', getSingleProduct)
   .post('/products', createProduct)
-  //   .put('/products/:id', updateProduct)
+  .put('/products/:id', updateSingleProduct)
   .delete('/products/:id', deleteSingleProduct);
 await app.listen({ port });
 console.log(`Server is up & running on ${port}`);

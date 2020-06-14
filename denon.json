@@ -3,10 +3,10 @@
     "MYSQL_HOST": "localhost",
     "MYSQL_USERNAME": "root",
     "MYSQL_PASSWORD": "",
-    "MYSQL_DATABASE": ""
+    "MYSQL_DATABASE": "deno-rest-db"
   },
   "$schema": "https://deno.land/x/denon/schema.json",
-  "allow": ["net", "env"],
+  "allow": ["net", "env", "read"],
   "scripts": {
     "start": {
       "cmd": "deno run server.ts",
